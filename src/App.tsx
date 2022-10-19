@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import { styled } from '@stitches/react';
+import AddTodo from './components/AddTodo';
 
 function App() {
+
+  //return 100 task components
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledDiv className="App">
+      <Title>Velkommen til React kurs!</Title>
+      <AddTodo />
+    </StyledDiv>
   );
 }
+
+const StyledDiv = styled('div', {
+  marginTop: '10vh',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+});
+
+const Title = styled('p', {
+  fontSize: '40px',
+  fontWeight: 'bold',
+  marginBottom: '40px',
+  textShadow: "1px 2px 3px #ffffff",
+});
 
 export default App;
